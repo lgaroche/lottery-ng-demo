@@ -1,0 +1,22 @@
+#game.ui.container()
+  .ui.fluid.card
+    h1.ui.headers
+      | {{gameState.reward}} eth / 
+      i.dollar.icon
+      | {{gameState.reward * 217.93}}
+    .ui.list
+      .item
+        .header Best address
+        | {{gameState.lowest}}
+      .item
+        .header Your address
+        | {{account}}
+    button.ui.pink.massive.bottom.attached.button(
+      (click)='play()'
+      *ngIf="playable && !waiting") Play!
+    button.ui.grey.massive.bottom.attached.loading.button(
+      (click)='play()'
+      *ngIf="waiting") Waiting...
+    button.ui.grey.massive.bottom.attached.disabled.button(
+      (click)='play()'
+      *ngIf="!playable") You cannot play

@@ -1,0 +1,93 @@
+{
+  "contract_name": "lowestAddressGame",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimWinner",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "place",
+      "outputs": [],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getGameState",
+      "outputs": [
+        {
+          "name": "lowestAddress",
+          "type": "address"
+        },
+        {
+          "name": "currentReward",
+          "type": "uint256"
+        },
+        {
+          "name": "timeLeft",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_newReward",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_when",
+          "type": "uint256"
+        }
+      ],
+      "name": "Place",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x606060405260008054600160a060020a031916600160a060020a031781556001819055600255341561002d57fe5b5b6101f88061003d6000396000f300606060405263ffffffff60e060020a600035041663237297a4811461003757806393cca91814610049578063b7d0628b14610053575bfe5b341561003f57fe5b61004761008b565b005b610047610109565b005b341561005b57fe5b6100636101ae565b60408051600160a060020a039094168452602084019290925282820152519081900360600190f35b60025460009042101561009e5760006000fd5b600154670de0b6b3a764000090116100b65760006000fd5b5060018054670de0b6b3a764000090915560008054604051670de0b6b3a763ffff1990930192600160a060020a039091169183156108fc02918491818181858888f19350505050151561010557fe5b5b50565b600054600160a060020a0390811633909116106101265760006000fd5b34670de0b6b3a76400001461013b5760006000fd5b6001805434019081905560008054600160a060020a033316600160a060020a0319909116811790915542607881016002556040805192835260208301939093528183015290517fa3e2817bee6ffc26926b3b1aa2b978578b549afd07f1a3dbf57abd37cf38c3c79181900360600190a15b565b600054600154600254600160a060020a03909216914290035b9091925600a165627a7a72305820e50aef872b2e9879f000b8a5e1dd737c2a7c2bf5a98764111100fd287c26b9b30029",
+  "networks": {
+    "1499854022390": {
+      "events": {
+        "0x95aae32619c25f91ebd8dfec746e81fceb30dd13d7646e31b43a98590a3afd9b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Place",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xf933d3b985329a272b39c5758fc8ba2eeaf6b4a9",
+      "updated_at": 1500216513739
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1500243747956
+}

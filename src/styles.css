@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./semantic/dist/semantic.css";
+
+body {
+	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+app-root>.ui.container {
+      margin-top: 3em;
+    }
+
+app-root>.grid {
+	height: 100%;
+}
+.column {
+	max-width: 650px;
+}
+
+#home, #game {
+	display: none;
+}

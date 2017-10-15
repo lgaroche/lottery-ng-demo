@@ -1,0 +1,28 @@
+doctype html
+.ui.middle.aligned.center.aligned.grid
+    .column
+        #home.ui.container
+          .massive.ui.buttons.homeButtons
+            button.ui.blue.button.addressLoadbutton((click)='showContractAddressInput()')
+              i.code.icon
+              | Load contract
+            .or
+            button.ui.button.deployContractButton((click)='deploy()')
+              i.settings.icon
+              | Deploy new contract
+          .ui.icon.message.deployLoadingBar(style='display: none')
+            i.notched.circle.loading.icon
+            .content
+              .header
+                | Contract deployment
+              p The game is getting ready.
+          .ui.hidden.divider
+          .ui.right.action.fluid.input.addressInput(style='display: none')
+            input#addressInput(#addressInput, type='text', placeholder='Enter contract address')
+            button.ui.blue.button.hidden((click)='loadContractAtAddress(addressInput.value)') Load
+        game([gameAddress]='gameAddress', *ngIf='gameAddress')
+        .ui.page.dimmer
+          .content
+            .center
+              h1.ui.header.inverted {{error}}
+              h2.ui.header.inverted Try reloading the page
