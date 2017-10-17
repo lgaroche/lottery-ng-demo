@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
   }
 
   public showContractAddressInput() {
-    this.gameAddress = localStorage.getItem("gameAddress")
+    //this.gameAddress = localStorage.getItem("gameAddress")
   	this.addressInputShown = !this.addressInputShown
   	if(this.addressInputShown) {
   		$('.deployContractButton').addClass('disabled')
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
   		$('.deployContractButton').removeClass('disabled')	
   	}
   	$('.addressInput').transition('slide down', () => {
-  		$('#addressInput').val(this.gameAddress)
+  		$('#addressInput').val(localStorage.getItem("gameAddress"))
   	})
   }
 
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
     console.log("deploying now...")
     this.game.deploy().then(address => {
       console.log(address)
-      this.gameAddress = address
+      localStorage.setItem("gameAddress", address)
       this.deployLoadingBarShown = false
       $('.deployLoadingBar').transition('slide up', () => {
         $('.addressLoadbutton').removeClass('disabled')

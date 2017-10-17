@@ -90,11 +90,8 @@ export class AddressGame {
 
 	getState(): Promise<GameState> {
 		return new Promise((resolve, reject) => {
-			return this.contract.methods.getGameState().call({from: this.account}, (err, res) => {
-				if(err) {
-					console.log("Error getGameState: " + err)
-					reject(err)
-				}
+			console.log("Calling game state from your account: " + this.account)
+			return this.contract.methods.getGameState().call({from: this.account}).then(res =>{
 				if(res[0] == "0x") {
             		reject("Contract has not been deployed")
             		return
@@ -102,6 +99,9 @@ export class AddressGame {
             	this.gameState = new GameState(res[0], res[2], this.blockchain.web3.utils.fromWei(res[1], 'ether').toString(10));
                 resolve(this.gameState);
                 console.log(this.contract)
+			}).catch(err => {
+				console.log("Error getGameState: " + err)
+				reject(err)
 			})
 		})
 	}
